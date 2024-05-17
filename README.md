@@ -59,8 +59,21 @@ This reconstruction serves two purposes:
 • Visualization: The reconstructed image can be used to visualize the latent space and understand what kind of information different dimensions encode.
 
 
-
-
 The results:
 
 <img width="498" alt="Screen Shot 2024-05-17 at 12 44 39 PM" src="https://github.com/hajami0802/Variational-Autoencoders-Classifier/assets/169827483/30053cb2-3469-47dc-a1b4-c606b2f29451">
+
+
+
+References:
+
+ Kingma, Diederik P., and Max Welling. "An introduction to variational autoencoders." Foundations and Trends® in Machine Learning 12.4 (2019): 307-392.
+ 
+ Heaton, Jeff. "Ian Goodfellow, Yoshua Bengio, and Aaron Courville: Deep learning: The MIT press, 2016, 800 pp, ISBN: 0262035618." Genetic programming and evolvable machines 19.1
+ (2018): 305-307.
+
+ Goodfellow, Ian, Yoshua Bengio, and Aaron Courville. Deep learning. MIT press, 2016.
+
+ Muslim, Ali M., et al. "Brain MRI dataset of multiple sclerosis with consensus manual lesion segmentation and patient meta information." Data in Brief 42 (2022): 108139.
+ 
+ Carass, Aaron, et al. "Longitudinal multiple sclerosis lesion segmentation: resource and challenge." NeuroImage 148 (2017): 77-102.
