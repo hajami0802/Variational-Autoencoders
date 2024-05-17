@@ -1,4 +1,16 @@
 # Variational-Autoencoders with a Classifier Head
+
+What are Variational-Autoencoders?
+
+VAEs leverage probabilistic modeling to uncover the hidden representation of data. The encoder learns this hidden
+representation, which is the compressed version of the data or latent space, by formulating the likelihood, which represents the probability of observing a specific data point given the VAE model. While VAEs don't directly calculate the exact likelihood due to its complexity, they employ a variational inference framework based on the concept of the latent space to approximate it.
+
+<img width="433" alt="Screen Shot 2024-05-17 at 12 53 24 PM" src="https://github.com/hajami0802/Variational-Autoencoders-Classifier/assets/169827483/30060413-4770-48d0-920d-bc9f438c4fcf">
+
+The fundamental structure of a variational autoencoder
+
+What is the goal of this study?
+
 This research compares the results of PCAEClassifier, and BetaVAEClassifier for automatically analyzing brain MRI scans from multiple sclerosis (MS) patients. The goal is to identify these WMLs and classify them into two classes, the class that contains the MRIs with white matter lesions, and the other class is for MRIs that do not have these lesions, ultimately helping diagnose and assess this disease.
 The image dataset was modified by applying data augmentation, preprocessing methods, compression, and normalization. The performance of each model was then evaluated using the metrics accuracy, precision, recall, and F-score. 
 The PCAEClassifier and BetaVAEClassifier with different sparsity regularization and beta values respectively, it's evident that the choice of hyperparameters significantly impacts the model's performance.
@@ -6,6 +18,17 @@ For the BetaVAEClassifier, the model's performance varied significantly with dif
 Similarly, for the PCAEClassifier, the model's performance varied with different sparsity parameters (S). With S equals to 5, the accuracy was 70.82%, with precision, recall, and F1-score at 78.11%, 57.57%, and 66.29%, respectively. Increasing the sparsity parameter to 10 led to a notable improvement in accuracy to 84.08%, with precision, recall, and F1-score showing similar increments. Finally, with S equals to 20, the model achieved the highest accuracy of 88.82%, accompanied by precision, recall, and F1-score of 90.38%, 86.40%, and 88.34%, respectively. 
 
 These models' sensitivity to hyperparameters highlights the intricate balance required in model configuration, especially in tasks where precision and recall are crucial, such as anomaly detection. Particularly in medical diagnostics like multiple sclerosis (MS) classification, where accurately distinguishing between affected and unaffected individuals is paramount, the performance of these models holds significant promise.
+
+Some more information and the results:
+
+Deterministic encoder (PCAEClassifier) vs Probabilistic encoder (BetaVAEClassifier):
+
+PCAEClassifier employs a fixed set of convolutional layers with learned filters, ensuring that the encoding process remains consistent across different input images, resulting in deterministic outputs. This deterministic approach streamlines the training process and may facilitate quicker convergence. On the other hand, Beta-VAE, a type of Variational Autoencoder (VAE), employs a Probabilistic Encoder. Unlike deterministic encoders, probabilistic encoders introduce stochastic elements into the encoding process, learning a distribution—often Gaussian—to represent encoded data. By capturing both mean features and variability, this probabilistic approach enriches the latent space, enabling it to have a broader spectrum of information about the input data.
+
+Deterministic encoder vs Probabilistic encoder:
+
+<img width="528" alt="Screen Shot 2024-05-17 at 12 50 26 PM" src="https://github.com/hajami0802/Variational-Autoencoders-Classifier/assets/169827483/ad00b7a7-8757-4924-9fa3-053fe4a3ea4b">
+
 
 Principal convolutional autoencoder classifier architecture in a glance:
 
@@ -34,6 +57,9 @@ This reconstruction serves two purposes:
 • Regularization: It helps the model learn a more meaningful latent space by encouraging it to capture the essential information needed for reconstruction.
 
 • Visualization: The reconstructed image can be used to visualize the latent space and understand what kind of information different dimensions encode.
+
+
+
 
 The results:
 
